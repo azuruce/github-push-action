@@ -24,6 +24,10 @@ fi
 cd ${INPUT_DIRECTORY}
 
 remote_repo="${INPUT_GITHUB_URL_PROTOCOL}//${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@${INPUT_GITHUB_URL}/${REPOSITORY}.git"
+pwd
+echo ${INPUT_GITHUB_URL_PROTOCOL}//${GITHUB_ACTOR}@${INPUT_GITHUB_URL}/${REPOSITORY}.git
+ls -al
+echo git config --local --add safe.directory ${INPUT_DIRECTORY}
 git config --local --add safe.directory ${INPUT_DIRECTORY}
 
 echo git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
